@@ -1,19 +1,19 @@
 <script setup lang="ts">
-import omlette from "@/assets/img/omlette.avif";
+    import omlette from "@/assets/img/omlette.avif";
 </script>
 
 <template>
-  <div class="w-screen bg-gray-200 py-14">
+  <div class="w-screen bg-gray-200 py-14 mb-10 px-5">
     <div
-      class="flex items-center justify-between w-full max-w-[1200px] mx-auto"
+      class="flex md:flex-row flex-col-reverse items-center justify-between w-full max-w-[1200px] mx-auto"
     >
-      <div>
+      <div class="md:mb-0 mt-10 text-center md:text-left">
         <h1 class="text-4xl md:text-5xl">
-          Master the Kitchen <br />with Ease: Unleash <br />Your Inner Chef
+          Master the Kitchen with Ease: Unleash Your Inner Chef
           Today
         </h1>
         <p class="pt-10 py-12 text-2xl">
-          Discover recipes helping you<br />to find the easiest way to cook.
+          Discover recipes helping you to find the easiest way to cook.
         </p>
         <router-link
           class="bg-sea-buckthorn-500 px-6 py-3 rounded-md text-white hover:bg-sea-buckthorn-600 transition-all text-lg"
