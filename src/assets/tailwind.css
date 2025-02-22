@@ -20,3 +20,12 @@ body {
   color: var(--primary);
 }
 
+.size-6 {
+  width: 2rem;
+  height: 2rem;
+}
+
+size-5{
+  width: 1.5rem;
+  height: 1.5rem;
+}

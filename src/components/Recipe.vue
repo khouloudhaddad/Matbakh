@@ -2,6 +2,7 @@
 import timeIcon from "@/assets/img/clock.svg";
 import fireIcon from "@/assets/img/fire.svg";
 import ratingIcon from "@/assets/img/stars.svg";
+import Tags from "@/components/Tags.vue";
 defineProps<{
   title: String;
   duration: Number;
@@ -10,6 +11,7 @@ defineProps<{
   reviewCount: Number;
   img: String;
   id: Number;
+  tags: Array<string>;
 }>();
 </script>
 
@@ -24,6 +26,7 @@ defineProps<{
         class="rounded-t-lg object-cover max-w-full"
       />
     </div>
+    <Tags :tags="tags" class="absolute top-3 left-3" />
     <div class="flex flex-col items-start p-4 w-full">
       <h5>
         <router-link

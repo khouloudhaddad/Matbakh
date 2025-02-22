@@ -1,7 +1,7 @@
 <script setup lang="ts" >
-import { onMounted, ref, defineProps, withDefaults } from "vue";
+import { onMounted, ref, withDefaults } from "vue";
 import { useRecipeStore } from "@/stores/recipeStore";
-import Recipe from "../components/Recipe.vue";
+import Recipe from "@/components/Recipe.vue";
 
 const props = withDefaults(
   defineProps<{
@@ -41,6 +41,7 @@ onMounted(() => {
         :reviewCount="recipe.reviewCount"
         :img="recipe.image"
         :id="recipe.id"
+        :tags="recipe.tags"
       />
     </div>
     <div v-else>No recipes are found!</div>

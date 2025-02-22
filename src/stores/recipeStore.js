@@ -16,7 +16,7 @@ export const useRecipeStore = defineStore("recipeStore", {
         const response = await axios.get(
           `https://dummyjson.com/recipes/${query}`
         );
-        this.recipes = response.data.recipes || [];
+        this.recipes = response.data.recipes.sort((a, b) => a.id - b.id) || [];
       } catch (err) {
         this.error = "Failed to fetch recipes";
       } finally {

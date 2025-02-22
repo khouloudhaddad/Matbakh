@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import omlette from "@/assets/img/omlette.avif";
-import { ref, onMounted, defineProps, withDefaults } from "vue";
+import { ref, onMounted, withDefaults } from "vue";
 const props = withDefaults(
   defineProps<{
     image?: string;
