@@ -14,7 +14,7 @@ export const useRecipeStore = defineStore("recipeStore", {
       this.error = null;
       try {
         const response = await axios.get(
-          "https://dummyjson.com/recipes"
+          `https://dummyjson.com/recipes/${query}`
         );
         this.recipes = response.data.recipes || [];
       } catch (err) {

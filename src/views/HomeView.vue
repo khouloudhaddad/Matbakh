@@ -5,7 +5,7 @@ import Recipes from "../components/Recipes.vue";
 
 <template>
   <main>
-    <Hero />
-    <Recipes />
+    <Hero showBtn="true" />
+    <Recipes showHeader="true" />
   </main>
 </template>

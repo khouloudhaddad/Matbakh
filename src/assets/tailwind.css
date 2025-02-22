@@ -1,11 +1,48 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-body{
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
+:root {
+  --primary: #f1820f;
 }
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-size: 1rem;
+}
+
+.router-link-active {
+  font-weight: bold;
+  color: var(--primary);
+}
+
+.circled-items ul li {
+  display: flex;
+  align-items: center;
+  line-height: 2;
+  position: relative;
+}
+
+.circled-items ul li > span {
+  content: "";
+  width: 25px;
+  height: 25px;
+  border: 1px solid var(--primary);
+  border-radius: 50%;
+  margin-right: 0.5rem;
+  display: table;
+  padding: 2.4px;
+}
+
+.circled-items ul li.barred > span::before {
+  content: "";
+  display: table-cell;
+  border: 5px solid var(--primary);
+  border-radius: 50%;
+  background-color: var(--primary);
+}
+
