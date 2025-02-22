@@ -3,7 +3,7 @@ import { useRouter } from "vue-router";
 import { ref } from "vue";
 
 defineProps<{
-  tags: string[];
+  tags?: string[];
 }>();
 
 const router = useRouter();

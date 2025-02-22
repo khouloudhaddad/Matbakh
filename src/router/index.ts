@@ -19,28 +19,30 @@ const router = createRouter({
     {
       path: "/recipes/:id",
       name: "recipe",
+      props: true,
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import("../views/RecipeView.vue"),
     },
+    // {
+    //   path: "/about",
+    //   name: "about",
+    //   // route level code-splitting
+    //   // this generates a separate chunk (About.[hash].js) for this route
+    //   // which is lazy-loaded when the route is visited.
+    //   component: () => import("../views/AboutView.vue"),
+    // },
     {
-      path: "/about",
-      name: "about",
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import("../views/AboutView.vue"),
-    },
-    {
-      path: "/recipes/:tag",
+      path: "/tags/:tag",
       name: "tagged-recipes",
+      props: true,
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import("../views/TaggedRecipes.vue"),
     },
-    { path: '/:catchAll(.*)*', name: 'not-found', component: NotFoundView  } // Catch-all route for 404
+    { path: '/:pathMatch(.*)*', name: 'not-found', component: NotFoundView } // Catch-all route for 404
   ],
 });
 

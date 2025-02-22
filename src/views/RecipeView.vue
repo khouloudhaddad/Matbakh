@@ -18,8 +18,8 @@ const currentRecipe = ref({});
 const previousRecipe = ref({});
 const nextRecipe = ref({});
 
-const fetchRecipe = async () => {
-  await store.fetchRecipes().then();
+onMounted(async () => {
+  await store.fetchRecipes();
   if (id.value > 1) {
     previousRecipe.value =
       store.recipes.find((recipe) => recipe.id === id.value - 1) || {};
@@ -32,23 +32,31 @@ const fetchRecipe = async () => {
 
   currentRecipe.value =
     store.recipes.find((recipe) => recipe.id === id.value) || {};
-};
 
-onMounted(() => {
   const found = store.recipes.find((recipe) => recipe.id === id.value);
   console.log(found);
   if (!found) {
     router.push({ name: "not-found" });
-  } else {
-    fetchRecipe();
   }
 });
 
 watch(
   () => route.params.id,
-  (newId) => {
+  async (newId) => {
     id.value = Number(newId); // Ensure ID is updated and converted
-    fetchRecipe();
+    await store.fetchRecipes();
+    if (id.value > 1) {
+      previousRecipe.value =
+        store.recipes.find((recipe) => recipe.id === id.value - 1) || {};
+    }
+
+    if (id.value < store.recipes.length) {
+      nextRecipe.value =
+        store.recipes.find((recipe) => recipe.id === id.value + 1) || {};
+    }
+
+    currentRecipe.value =
+      store.recipes.find((recipe) => recipe.id === id.value) || {};
   }
 );
 </script>
@@ -122,7 +130,7 @@ watch(
       class="w-full max-h-[450px] object-cover rounded-md mb-6 shadow-md"
     />
     <!--Tags-->
-    <Tags :tags="currentRecipe.tags"  />
+    <Tags :tags="currentRecipe.tags" />
     <!--Ingredients-->
     <h3 class="text-2xl my-4 font-semibold border-t pt-4">Ingredients</h3>
     <div class="circled-items flex">

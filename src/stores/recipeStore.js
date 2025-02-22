@@ -23,10 +23,22 @@ export const useRecipeStore = defineStore("recipeStore", {
         this.loading = false;
       }
     },
-    fetchRecipesByTag(tag = "") {
-      return this.recipes.filter((recipe) =>
+    async fetchRecipesByTag(tag = "Salad") {
+      this.loading = true;
+      this.error = null;
+
+      // Ensure recipes are available
+      if (this.recipes.length === 0) {
+        await this.fetchRecipes(); // Fetch if empty
+      }
+
+      // Filter recipes by tag
+      const filteredRecipes = this.recipes.filter((recipe) =>
         recipe.tags.some((itemTag) => itemTag === tag)
       );
+
+      this.loading = false;
+      return filteredRecipes; // Ensure it returns an array
     },
   },
 });

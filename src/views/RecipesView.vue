@@ -7,6 +7,6 @@ import Hero from '../components/Hero.vue'
 <template>
   <main>
     <Hero />
-    <Recipes />
+    <Recipes :limit="Number('0')" />
   </main>
 </template>
