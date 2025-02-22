@@ -23,5 +23,10 @@ export const useRecipeStore = defineStore("recipeStore", {
         this.loading = false;
       }
     },
+    fetchRecipesByTag(tag = "") {
+      return this.recipes.filter((recipe) =>
+        recipe.tags.some((itemTag) => itemTag === tag)
+      );
+    },
   },
 });

@@ -32,6 +32,14 @@ const router = createRouter({
       // which is lazy-loaded when the route is visited.
       component: () => import("../views/AboutView.vue"),
     },
+    {
+      path: "/recipes/:tag",
+      name: "tagged-recipes",
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import("../views/TaggedRecipes.vue"),
+    },
     { path: '/:catchAll(.*)*', name: 'not-found', component: NotFoundView  } // Catch-all route for 404
   ],
 });
