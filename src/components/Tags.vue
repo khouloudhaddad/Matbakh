@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { useRouter } from "vue-router";
-import { ref } from "vue";
 
 defineProps<{
   tags?: string[];
@@ -13,7 +12,7 @@ const filterByTags = (tag: string) => {
 };
 </script>
 <template>
-  <div class="flex items-center gap-1 w-full">
+  <div class="flex items-center gap-1 w-full flex-wrap">
     <button
       @click="filterByTags(tag)"
       class="bg-soft-peach-500 text-white text-xs font-medium me-2 px-3 py-1 rounded-sm dark:bg-soft-peach-900 dark:text-soft-peach-300 shadow-md"

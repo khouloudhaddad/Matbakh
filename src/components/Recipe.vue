@@ -31,7 +31,7 @@ defineProps<{
       <h5>
         <router-link
           class="text-xl capitalize font-semibold mb-1 hover:text-soft-peach-700 transition-all"
-          :to="`recipes/${id}`"
+          :to="`/recipes/${id}`"
           >{{ title }}</router-link
         >
       </h5>

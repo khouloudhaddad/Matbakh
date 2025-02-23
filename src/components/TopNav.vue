@@ -10,7 +10,7 @@ import logo from "@/assets/logo.svg";
       <router-link to="/">
         <img :src="logo" alt="" class="w-auto h-[50px] pr-2" />
       </router-link>
-      <span>Nuxtcipes</span>
+      <span>Matbakh</span>
     </div>
     <nav>
       <ul class="flex gap-4">
