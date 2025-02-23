@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import logo from "@/assets/logo.svg";
+import LanguageSwitcher from "@/components/LanguageSwitcher.vue";
 </script>
 
 <template>
@@ -10,24 +11,23 @@ import logo from "@/assets/logo.svg";
       <router-link to="/">
         <img :src="logo" alt="" class="w-auto h-[50px] pr-2" />
       </router-link>
-      <span>Matbakh</span>
+      <span>{{ $t("Matbakh") }}</span>
     </div>
-    <nav>
+    <nav class="flex items-center gap-2">
       <ul class="flex gap-4">
         <router-link
           to="/"
           class="text-lg hover:text-sea-buckthorn-500 transition-all"
-          >Home</router-link
+          >{{ $t("home") }}</router-link
         >
         <router-link
           to="/recipes"
           class="text-lg hover:text-sea-buckthorn-500 transition-all"
-          >Recipes</router-link
+          >{{ $t("recipes") }}</router-link
         >
       </ul>
+      <!-- Language Selector Dropdown -->
+      <LanguageSwitcher />
     </nav>
   </header>
 </template>
-
-<style scoped>
-</style>

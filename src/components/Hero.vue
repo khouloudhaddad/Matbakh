@@ -26,18 +26,18 @@ const props = withDefaults(
     <div
       class="flex lg:flex-row flex-col-reverse items-center justify-between w-full max-w-[1200px] mx-auto"
     >
-      <div class="md:mb-0 mt-10 text-center lg:text-left lg:max-w-[50%] px-5">
+      <div class="md:mb-0 mt-10 text-center lg:text-left rtl:lg:text-right lg:max-w-[50%] px-5">
         <h1 class="text-4xl lg:text-5xl">
-          {{ props.title }}
+          {{ $t(props.title) }}
         </h1>
         <p class="pt-10 py-12 text-2xl">
-          {{ props.description }}
+          {{ $t(props.description) }}
         </p>
         <router-link
           v-if="showBtn"
           class="bg-sea-buckthorn-500 px-6 py-3 rounded-md text-white hover:bg-sea-buckthorn-600 transition-all text-lg"
           to="/recipes"
-          >{{ props.btnText }}</router-link
+          >{{ $t(props.btnText) }}</router-link
         >
       </div>
       <div>

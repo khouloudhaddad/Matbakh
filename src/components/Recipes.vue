@@ -24,8 +24,8 @@ onMounted(() => {
 <template>
   <div class="max-w-[1200px] mx-auto mb-10 px-4">
     <div class="w-full" v-if="showHeader">
-      <h2 class="text-4xl font-semibold mb-2">Discover, Create, Share</h2>
-      <p class="text-lg">Check out our most recent recipes !</p>
+      <h2 class="text-4xl font-semibold mb-2">{{$t('Discover, Create, Share')}}</h2>
+      <p class="text-lg">{{$t('Check out our most recent recipes !')}}</p>
     </div>
     <div
       class="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-5 my-10"

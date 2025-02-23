@@ -5,6 +5,7 @@ export default {
     extend: {
       fontFamily: {
         montserrat: ["Montserrat", "sans-serif"],
+        tajwal: ["Tajawal", "serif"]
       },
       colors: {
         "sea-buckthorn": {
@@ -36,5 +37,5 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [require('tailwindcss-rtl')],
 };

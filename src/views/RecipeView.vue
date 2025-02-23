@@ -132,11 +132,11 @@ watch(
     <!--Tags-->
     <Tags :tags="currentRecipe.tags" />
     <!--Ingredients-->
-    <h3 class="text-2xl my-4 font-semibold border-t pt-4">Ingredients</h3>
+    <h3 class="text-2xl my-4 font-semibold border-t pt-4">{{ $t('Ingredients') }}</h3>
     <div class="circled-items flex">
       <ul class="gap-2 md:grid md:grid-cols-2 flex flex-col">
         <li
-          class="flex items-center"
+          class="flex items-center gap-2"
           v-for="ingredient in currentRecipe.ingredients"
           :key="ingredient"
         >
@@ -147,9 +147,9 @@ watch(
     </div>
 
     <!--Instructions-->
-    <h3 class="text-2xl my-4 font-semibold">Instructions</h3>
+    <h3 class="text-2xl my-4 font-semibold">{{ $t('Instructions') }}</h3>
     <ul class="list-numbered">
-      <li v-for="instruction in currentRecipe.instructions" :key="instruction">
+      <li v-for="instruction in currentRecipe.instructions" :key="instruction" class="flex items-center gap-2">
         {{ instruction }}
       </li>
     </ul>
@@ -163,7 +163,6 @@ watch(
   height: 25px;
   border: 1px solid var(--primary);
   border-radius: 50%;
-  margin-right: 0.5rem;
   display: table;
   padding: 2.4px;
   flex: 0 0 25px;
@@ -185,8 +184,6 @@ watch(
   li {
     counter-increment: list-counter;
     margin-bottom: 0.5rem;
-    display: flex;
-    align-items: center;
     &::before {
       content: counter(list-counter);
       width: 30px;
@@ -194,7 +191,6 @@ watch(
       background: var(--primary);
       display: flex;
       border-radius: 50%;
-      margin-right: 0.5rem;
       color: white;
       flex-direction: column;
       justify-content: center;

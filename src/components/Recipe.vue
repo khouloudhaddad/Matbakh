@@ -26,7 +26,7 @@ defineProps<{
         class="rounded-t-lg object-cover max-w-full"
       />
     </div>
-    <Tags :tags="tags" class="absolute top-3 left-3" />
+    <Tags :tags="tags" class="absolute top-3 left-3 rtl:left-0 rtl:right-3" />
     <div class="flex flex-col items-start p-4 w-full">
       <h5>
         <router-link
@@ -53,7 +53,7 @@ defineProps<{
         :to="{ name: 'recipe', params: { id: id } }"
         class="bg-sea-buckthorn-500 hover:bg-sea-buckthorn-600 transition-all font-semibold px-5 py-2 text-white rounded-md"
       >
-        View
+        {{ $t('View') }}
       </router-link>
     </div>
   </div>
