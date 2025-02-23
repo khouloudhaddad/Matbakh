@@ -82,7 +82,7 @@ watch(
         </div>
       </div>
       <!--Next/Prev-->
-      <div class="flex gap-2">
+      <div class="flex gap-2 rtl:flex-row-reverse">
         <router-link
           :to="`/recipes/${previousRecipe.id}`"
           class="bg-sea-buckthorn-500 rounded-lg font-bold hover:bg-sea-buckthorn-600 transition-all text-white"

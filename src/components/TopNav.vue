@@ -17,12 +17,12 @@ import LanguageSwitcher from "@/components/LanguageSwitcher.vue";
       <ul class="flex gap-4">
         <router-link
           to="/"
-          class="text-lg hover:text-sea-buckthorn-500 transition-all"
+          class="text-lg hover:text-sea-buckthorn-500 transition-all capitalize"
           >{{ $t("home") }}</router-link
         >
         <router-link
           to="/recipes"
-          class="text-lg hover:text-sea-buckthorn-500 transition-all"
+          class="text-lg hover:text-sea-buckthorn-500 transition-all capitalize"
           >{{ $t("recipes") }}</router-link
         >
       </ul>
