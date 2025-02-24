@@ -1,7 +1,6 @@
 <script setup lang="ts">
-import Recipes from "../components/Recipes.vue";
-import Hero from '../components/Hero.vue'
-
+import Recipes from "@/components/Recipes.vue";
+import Hero from '@/components/Hero.vue'
 </script>
 
 <template>
